@@ -1,3 +1,6 @@
+# display
+export DISPLAY=:0
+
 # cursor
 export PS1="\[\e[0;33m\]sc\[\e[1;34m\] in \[\e[0;34m\]\[\e[1;36m\][\w]\[\e[0;33m\]\n\\$ \[\e[0m\]"
 
