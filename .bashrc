@@ -28,10 +28,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# tmux -- if not running interactively, do not do anything
-[[ $- != *i* ]] && return
-# otherwise, start tmux on every bash login
-[[ -z "$TMUX" ]] && exec tmux source-file $HOME/.tmux.conf
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach -t muxer || tmux -f $HOME/.tmux.conf)
+fi
 
 # golang
 export GOPATH=$HOME/Code/go
