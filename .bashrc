@@ -28,18 +28,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# TMUX
-if which tmux 2>&1 >/dev/null; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach -t muxer || tmux -f $HOME/.tmux.conf)
-fi
-
 # golang
-export GOPATH=$HOME/Code/go
+export GOPATH=$HOME/code/go
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 
 # general aliases
-alias code='cd ~/Code'
-alias py='echo "Loading iPython..."; ipython'
+alias code='cd ~/code'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.url2pathname(sys.argv[1])"'
+alias starwars='telnet towel.blinkenlights.nl'
+
