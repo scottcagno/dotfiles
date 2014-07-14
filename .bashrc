@@ -57,10 +57,10 @@ alias install_java8='sudo add-apt-repository ppa:webupd8team/java; sudo apt-get 
 alias java6='sudo apt-get -y install oracle-java6-set-default'
 alias java7='sudo apt-get -y install oracle-java7-set-default'
 alias java8='sudo apt-get -y install oracle-java8-set-default'
-alias code='cd ~/code'
-alias getjava='cd ~/code/java'
-alias getpython='cd ~/code/python'
-alias getgo='cd ~/code/go/src'
+alias code='cd ~/Code'
+alias getjava='cd ~/Code/java'
+alias getpython='cd ~/Code/python'
+alias getgo='cd ~/Code/go/src'
 alias py='echo "Loading iPython..."; ipython'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.url2pathname(sys.argv[1])"'
@@ -75,3 +75,9 @@ alias google='chromium-browser google.com'
 alias gopkg='chromium-browser golang.org/pkg/'
 alias gosrc='chromium-browser golang.org/src/pkg/'
 export PASS="envnei9049"
+
+# INSTALL GVM  
+export install_gvm='curl -s get.gvmtool.net | bash'
+
+# THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/sac/.gvm/bin/gvm-init.sh" ]] && source "/home/sac/.gvm/bin/gvm-init.sh"
